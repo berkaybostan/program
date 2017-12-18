@@ -12,7 +12,7 @@ use yii\filters\VerbFilter;
 /**
  * ProgramsController implements the CRUD actions for Program model.
  */
-class ProgramsController extends Controller
+class ProgramsController extends DefaultController
 {
     /**
      * @inheritdoc

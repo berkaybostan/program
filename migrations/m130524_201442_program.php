@@ -12,7 +12,16 @@ class m130524_201442_sample extends Migration
             // http://stackoverflow.com/questions/766809/whats-the-difference-between-utf8-general-ci-and-utf8-unicode-ci
             $tableOptions = 'CHARACTER SET utf8 COLLATE utf8_unicode_ci ENGINE=InnoDB';
         }
-
+		
+        $this->createTable('{{%program}}', [
+            'id' => $this->primaryKey(),
+            'dersadi' => $this->string(50)->notNull(),
+			'derssaati' => $this->string(5)->notNull(),
+			'gun' => $this->string(10)->notNull(),
+			'sinif' => $this->string(20)->notNull(),
+			'ogretimgorevlisi' => $this->string(30)->notNull(),
+        ], $tableOptions);
+		
         $this->createTable('{{%samples}}', [
             'id' => $this->primaryKey(),
             'title' => $this->string(200)->notNull(),
@@ -44,6 +53,7 @@ class m130524_201442_sample extends Migration
 
     public function down()
     {
+		$this->dropTable('{{%program}}');
         $this->dropForeignKey('fk_sample_data_sample_id-1','sample_data');
         $this->dropIndex('idx_sample_data_sample_id-1','sample_data');
         $this->dropTable('{{%sample_data}}');

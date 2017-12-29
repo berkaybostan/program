@@ -12,7 +12,8 @@ C:\xampp\htdocs\app dizini içerisindeki composer dosyasına aşağıdaki direkt
 	"kouosl/program": "dev-master"
 ```
 
-C:\xampp\htdocs\app\backend\config
+C:\xampp\htdocs\app\backend\config 
+
 C:\xampp\htdocs\app\frontend\config dizinleri içerisindeki main.php dosyasına aşağıdaki direktifleri ekliyoruz.
 
 ```

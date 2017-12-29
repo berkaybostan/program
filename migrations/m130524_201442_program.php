@@ -16,16 +16,16 @@ class m130524_201442_sample extends Migration
         $this->createTable('{{%program}}', [
             'id' => $this->primaryKey(),
             'dersadi' => $this->string(50)->notNull(),
-			'derssaati' => $this->string(5)->notNull(),
-			'gun' => $this->string(10)->notNull(),
-			'sinif' => $this->string(20)->notNull(),
-			'ogretimgorevlisi' => $this->string(30)->notNull(),
+            'derssaati' => $this->string(5)->notNull(),
+            'gun' => $this->string(10)->notNull(),
+            'sinif' => $this->string(20)->notNull(),
+            'ogretimgorevlisi' => $this->string(30)->notNull(),
         ], $tableOptions);
 		
         $this->createTable('{{%samples}}', [
             'id' => $this->primaryKey(),
             'title' => $this->string(200)->notNull(),
-			'description' => $this->text()->notNull(),
+            'description' => $this->text()->notNull(),
             'picture' => $this->text(),
         ], $tableOptions);
 
@@ -53,7 +53,7 @@ class m130524_201442_sample extends Migration
 
     public function down()
     {
-		$this->dropTable('{{%program}}');
+        $this->dropTable('{{%program}}');
         $this->dropForeignKey('fk_sample_data_sample_id-1','sample_data');
         $this->dropIndex('idx_sample_data_sample_id-1','sample_data');
         $this->dropTable('{{%sample_data}}');
